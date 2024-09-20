@@ -1,4 +1,4 @@
-{% set version = '1.2.9' %}
+{% set version = "1.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,11 +9,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gpg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gpg/gpg_{{ version }}.tar.gz
-  sha256: 1f1d23d5519881cb1735df0e7c6b5bd01e4e8642c4c3a990eaac014028004e4c
+  sha256: 03bc36b621a8463ab922089486cbc7bbfbdb2f47e3eebf476a2fd26e77af1612
 
 build:
-  skip: True  # [win]
-  number: 1
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -55,11 +55,8 @@ test:
 about:
   home: https://github.com/jeroen/gpg
   license: MIT
-  summary: Bindings to GnuPG for working with OpenGPG (RFC4880) cryptographic methods. Includes
-    utilities for public key encryption, creating and verifying digital signatures,
-    and managing your local keyring. Some functionality depends on the version of GnuPG
-    that is installed on the system. On Windows this package can be used together with
-    'GPG4Win' which provides a GUI for managing keys and entering passphrases.
+  summary: Bindings to GnuPG for working with OpenGPG (RFC4880) cryptographic methods. Includes utilities for public key encryption, creating and verifying digital signatures, and managing your local keyring. Some functionality depends on the version of GnuPG that is installed on the system. On Windows this package can be
+    used together with 'GPG4Win' which provides a GUI for managing keys and entering passphrases.
   license_family: MIT
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
